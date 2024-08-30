@@ -19,12 +19,16 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route('skills.store'));
+    Inertia.post(`/skills/${props.skill.id}`,{
+        _method: "put",
+        name: form.name,
+        image: form.image,
+    });
 };
 </script>
 <template>
 
-    <Head title="Nova Habilidade" />
+    <Head title="Editar Habilidade" />
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Editar Habilidade</h2>
