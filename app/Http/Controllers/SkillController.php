@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\SkillResource;
-use Inertia\Inertia;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Inertia\Inertia;
 
 class SkillController extends Controller
 {
@@ -45,7 +45,7 @@ class SkillController extends Controller
                 'image' => $image
             ]);
 
-            return Redirect::route('skills.index');
+            return Redirect::route('skills.index')->with('message', 'Habilidade criada com sucesso!');
         }
 
         return Redirect::back();
@@ -76,17 +76,15 @@ class SkillController extends Controller
         $request->validate([
             'name' => ['required', 'min:3']
         ]);
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             Storage::delete($skill->image);
             $image = $request->file('image')->store('skills');
         }
-
         $skill->update([
             'name' => $request->name,
             'image' => $image
         ]);
-
-        return Redirect::route('skill.index');
+        return Redirect::route('skills.index')->with('message', 'Skill updated successfully.');
     }
 
     /**
@@ -97,6 +95,6 @@ class SkillController extends Controller
         Storage::delete($skill->image);
         $skill->delete();
 
-        return Redirect::back();
+        return Redirect::back()->with('message', 'Habilidade excluída com sucesso!');
     }
 }

@@ -9,6 +9,7 @@ import TextInput from '@/Components/TextInput.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import { Inertia } from '@inertiajs/inertia';
 
+
 const props = defineProps({
     skill: Object,
 });
@@ -17,18 +18,18 @@ const form = useForm({
     name: props.skill?.name,
     image: null,
 });
-
+ 
 const submit = () => {
-    Inertia.post(`/skills/${props.skill.id}`,{
-        _method: "put",
-        name: form.name,
-        image: form.image,
-    });
+    Inertia.post(`/skills/${props.skill.id}`, {
+    _method: "put",
+    name: form.name,
+    image: form.image,
+  });
 };
 </script>
 <template>
 
-    <Head title="Editar Habilidade" />
+    <Head title="Nova Habilidade" />
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Editar Habilidade</h2>
@@ -39,20 +40,20 @@ const submit = () => {
                 <form class="p-4" @submit.prevent="submit">
                     <div>
                         <InputLabel for="name" value="Name" />
-                        <TextInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" required
-                            autofocus autocomplete="username" />
-                        <InputError class="mt-2" :message="form.errors.name" />
+                        <TextInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" autofocus
+                            autocomplete="username" />
+                        <InputError class="mt-2" :message="$page.props.errors.image"/>
                     </div>
                     <div class="mt-2">
                         <InputLabel for="image" value="Image" />
-                        <TextInput id="image" type="file" class="mt-1 block w-full" @input="form.image = $event.target.files[0]" />
-                        <InputError class="mt-2" :message="form.errors.image" />
+                        <TextInput id="image" type="file" class="mt-1 block w-full"
+                            @input="form.image = $event.target.files[0]" />
                     </div>
 
 
                     <div class="flex items-center justify-end mt-4">
 
-                        <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }"
+                        <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }"
                             :disabled="form.processing">
                             Editar
                         </PrimaryButton>

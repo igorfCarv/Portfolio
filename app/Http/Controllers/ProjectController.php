@@ -49,7 +49,7 @@ class ProjectController extends Controller
                 'project_url' => $request->project_url
             ]);
 
-            return Redirect::route('projects.index');
+            return Redirect::route('projects.index')->with('message', 'Projeto criado com sucesso!');
         }
 
         return Redirect::back();
@@ -86,6 +86,7 @@ class ProjectController extends Controller
             Storage::delete($project->image);
             $image = $request->file('image')->store('projects');
         }
+
         $project->update([
             'name' => $request->name,
             'skill_id' => $request->skill_id,
@@ -93,7 +94,7 @@ class ProjectController extends Controller
             'image' => $image
         ]);
 
-        return Redirect::route('projects.index');
+        return Redirect::route('projects.index')->with('message', 'Projeto atualizado com sucesso!');
     }
 
     /**
@@ -104,6 +105,6 @@ class ProjectController extends Controller
         Storage::delete($project->image);
         $project->delete();
 
-        return Redirect::back();
+        return Redirect::back()->with('message', 'Projeto excluído com sucesso!');
     }
 }

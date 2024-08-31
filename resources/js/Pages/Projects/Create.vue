@@ -40,16 +40,17 @@ const submit = () => {
                         <select v-model="form.skill_id" id="skill_id" name="skill_id" class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm mt-1 block w-full">
                             <option v-for="skill in skills" :key="skill.id" :value="skill.id">{{ skill.name }}</option>
                         </select>
+                        <InputError class="mt-2" :message="form.errors.skill_id" />
                     </div>
                     <div class="mt-2">
                         <InputLabel for="name" value="Name" />
-                        <TextInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" required
+                        <TextInput id="name" type="text" class="mt-1 block w-full" v-model="form.name"
                             autofocus autocomplete="username" />
                         <InputError class="mt-2" :message="form.errors.name" />
                     </div>
                     <div class="mt-2">
                         <InputLabel for="project_url" value="Link do projeto" />
-                        <TextInput id="project_url" type="text" class="mt-1 block w-full" v-model="form.project_url" required
+                        <TextInput id="project_url" type="text" class="mt-1 block w-full" v-model="form.project_url" 
                             autofocus autocomplete="userproject_url" />
                         <InputError class="mt-2" :message="form.errors.project_url" />
                     </div>
