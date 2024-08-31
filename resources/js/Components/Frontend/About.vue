@@ -12,7 +12,13 @@
                         <h2 class="text-3xl lg:text-4xl font-medium lg:font-extrabold mb-">
                             Sobre Mim
                         </h2>
+                        <p class="mb-4 text-accent dark:text-white"> Desenvolvedor Full Stack</p>
+                        <hr class="mb-8 opacity-90">
+                        <p class="mb-8">
+
+                        </p>
                     </div>
+                    <a href="#contact" class="btn btn-md bg-accent text-slate-200"> Desejo entrar em contato </a>
                 </div>
             </div>
         </div>
