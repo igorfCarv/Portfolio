@@ -80,13 +80,23 @@ class SkillController extends Controller
             Storage::delete($skill->image);
             $image = $request->file('image')->store('skills');
         }
+
+        $skill->update([
+            'name' => $request->name,
+            'image' => $image
+        ]);
+
+        return Redirect::route('skill.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Skill $skill)
     {
-        //
+        Storage::delete($skill->image);
+        $skill->delete();
+
+        return Redirect::back();
     }
 }
