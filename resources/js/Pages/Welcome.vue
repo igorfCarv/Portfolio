@@ -24,7 +24,6 @@ defineProps({
         <About />
         <Skills :skills="skills" />
         <Portfolio :skills="skills" :projects="projects" />
-        <Services />
         <ContactMe />
     </FrontendLayout>
 </template>

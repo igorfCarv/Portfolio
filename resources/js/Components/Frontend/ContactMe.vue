@@ -29,7 +29,7 @@ const submit = () => {
 };
 </script>
 <template>
-  <section id="contact" class="section bg-light-primary dark:bg-dark-primary">
+  <section id="contact" class="section bg-light-tail-100 dark:bg-dark-navy-500">
     <div
       class="container mx-auto"
       v-motion
@@ -42,11 +42,10 @@ const submit = () => {
         y: 0,
       }"
     >
-      <div class="flex flex-col items-center text-center">
-        <h2 class="section-title">Contact Me</h2>
-        <p class="subtitle">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga veniam
-          labore nisium illum cupiditate reiciendis a numquam
+      <div id="#contact" class="flex flex-col items-center text-center">
+        <h2 class="section-title">Contato</h2>
+        <p class="subtitle text-white">
+          Disponível para novos desafios. Entre em contato!
         </p>
       </div>
       <div class="flex flex-col lg:flex-row lg:gap-x-8">
@@ -60,7 +59,7 @@ const submit = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
-                stroke="currentColor"
+                stroke="#FFFFFF"
                 class="w-6 h-6"
               >
                 <path
@@ -71,33 +70,20 @@ const submit = () => {
               </svg>
             </div>
             <div>
-              <h4 class="font-body text-xl mb-1">Have a question?</h4>
-              <P class="mb-1 text-paragraph">I am here to help you.</P>
-              <p class="text-accent font-normal">Email me at john@doe.com</p>
+              <h4 class="font-body text-xl mb-1">Tem alguma dúvida?</h4>
+              <P class="mb-1 text-white">Me envie um E-mail:</P>
+              <p class="text-accent font-normal"> igor.carvalhofranca@gmail.com</p>
             </div>
           </div>
           <div class="flex flex-col lg:flex-row gap-x-4">
             <div
-              class="
-                text-accent
-                rounded-sm
-                w-14
-                h-14
-                flex
-                items-start
-                justify-center
-                mt-2
-                mb-4
-                lg:mb-0
-                text-2xl
-              "
-            >
+              class="text-accent rounded-sm w-14 h-14 flex items-start justify-center mt-2 mb-4 lg:mb-0 text-2xl">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
-                stroke="currentColor"
+                stroke="#FFFFFF"
                 class="w-6 h-6"
               >
                 <path
@@ -113,9 +99,9 @@ const submit = () => {
               </svg>
             </div>
             <div>
-              <h4 class="font-body text-xl mb-1">Current Location</h4>
-              <P class="mb-1 text-paragraph">Tirana, Albania.</P>
-              <p class="text-accent font-normal">Serving clients worldwide.</p>
+              <h4 class="font-body text-xl mb-1">Localização atual</h4>
+              <P class="mb-1 text-white">Fortaleza, Ceará.</P>
+              <p class="text-accent font-normal">Atendendo clientes em todo o mundo.</p>
             </div>
           </div>
         </div>
@@ -131,7 +117,7 @@ const submit = () => {
                 v-model="form.name"
                 type="text"
                 class="input"
-                placeholder="Your Name"
+                placeholder="Seu Nome"
               />
               <span v-if="form.errors.name" class="text-sm m-2 text-red-400">{{
                 form.errors.name
@@ -142,7 +128,7 @@ const submit = () => {
                 v-model="form.email"
                 type="email"
                 class="input"
-                placeholder="Your Email"
+                placeholder="Seu E-mail"
               />
               <span v-if="form.errors.email" class="text-sm m-2 text-red-400">{{
                 form.errors.email
@@ -152,7 +138,7 @@ const submit = () => {
           <textarea
             v-model="form.body"
             class="textarea"
-            placeholder="Your Meassage"
+            placeholder="Digite sua mensagem"
             spellcheck="false"
           ></textarea>
           <span v-if="form.errors.body" class="text-sm m-2 text-red-400">{{
@@ -160,7 +146,7 @@ const submit = () => {
           }}</span>
 
           <button class="btn btn-lg bg-accent hover:bg-secondary text-white">
-            Send message
+            Entrar em contato
           </button>
         </form>
       </div>

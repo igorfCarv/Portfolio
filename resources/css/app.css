@@ -41,4 +41,7 @@
     .active {
         @apply text-accent;
     }
+    .sm-justify-center{
+        @apply justify-center
+    }
 }

@@ -13,8 +13,7 @@ defineProps({
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">Meus Últimos Trabalhos</h2>
                 <p class="subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga veniam
-                    labore nisium illum cupiditate reiciendis a numquam
+                    Uma visão geral dos meus projetos mais recentes.
                 </p>
             </div>
         </div>

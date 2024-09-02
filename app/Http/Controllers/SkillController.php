@@ -35,7 +35,7 @@ class SkillController extends Controller
     {
         $request->validate([
             'image' => ['required','image'],
-            'name' => ['required', 'min:3']
+            'name' => ['required', 'min:2']
         ]);
 
         if($request->hasFile('image')){
@@ -74,7 +74,7 @@ class SkillController extends Controller
     {
         $image = $skill->image;
         $request->validate([
-            'name' => ['required', 'min:3']
+            'name' => ['required', 'min:2']
         ]);
         if ($request->hasFile('image')) {
             Storage::delete($skill->image);
